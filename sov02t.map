@@ -235,6 +235,136 @@ Value=50
 
 [PreviewPack]
 
+[01000022]
+0=2,JUMPJET
+Name=2 Rocketeers
+Group=-1
+
+[01000023]
+0=3,47
+Name=2 Rocketeers
+
+[01000024]
+Max=5
+Tag=01000021
+Full=yes
+Name=2 Rocketeers
+Group=-1
+House=Americans
+Script=01000023
+Whiner=no
+Droppod=no
+Suicide=no
+Loadable=no
+Prebuild=no
+Priority=5
+Waypoint=BK
+Annoyance=no
+IonImmune=no
+Recruiter=no
+Reinforce=yes
+TaskForce=01000022
+TechLevel=0
+Aggressive=no
+Autocreate=yes
+GuardSlower=no
+OnTransOnly=no
+AvoidThreats=no
+LooseRecruit=no
+VeteranLevel=1
+IsBaseDefense=no
+UseTransportOrigin=no
+OnlyTargetHouseEnemy=no
+TransportsReturnOnUnload=no
+AreTeamMembersRecruitable=no
+
+[01000029]
+0=10,JUMPJET
+Name=Last wave of Rocketeers
+Group=-1
+
+[01000030]
+0=3,45
+1=0,1
+2=53,0
+3=0,1
+Name=Last wave of Rocketeers -- Attack Sov
+
+[01000031]
+Max=5
+Full=yes
+Name=Last wave of rocketeers
+Group=-1
+House=Americans
+Script=01000030
+Whiner=no
+Droppod=no
+Suicide=no
+Loadable=no
+Prebuild=no
+Priority=5
+Waypoint=BK
+Annoyance=no
+IonImmune=no
+Recruiter=no
+Reinforce=yes
+TaskForce=01000029
+TechLevel=0
+Aggressive=no
+Autocreate=yes
+GuardSlower=no
+OnTransOnly=no
+AvoidThreats=no
+LooseRecruit=no
+VeteranLevel=1
+IsBaseDefense=no
+UseTransportOrigin=no
+OnlyTargetHouseEnemy=no
+TransportsReturnOnUnload=no
+AreTeamMembersRecruitable=no
+
+[01000032]
+0=1,HTK
+Name=1 Flak Track
+Group=-1
+
+[01000033]
+0=3,60
+Name=1 Flak Track
+
+[01000034]
+Max=5
+Full=yes
+Name=1 Flack Track for Soviet
+Group=-1
+House=Russians
+Script=01000033
+Whiner=no
+Droppod=yes
+Suicide=no
+Loadable=no
+Prebuild=no
+Priority=5
+Waypoint=BI
+Annoyance=no
+IonImmune=no
+Recruiter=no
+Reinforce=yes
+TaskForce=01000032
+TechLevel=0
+Aggressive=no
+Autocreate=yes
+GuardSlower=no
+OnTransOnly=no
+AvoidThreats=no
+LooseRecruit=no
+VeteranLevel=1
+IsBaseDefense=no
+UseTransportOrigin=no
+OnlyTargetHouseEnemy=no
+TransportsReturnOnUnload=no
+AreTeamMembersRecruitable=no
+
 [AITriggerTypes]
 096FD76C=North and South Capture,09820A7C,Russians,3,4,<none>,d007000003000000000000000000000000000000000000000000000000000000,50.000000,10.000000,70.000000,0,0,0,0,098205CC,0,0,1
 09BDB62C=Inner Base Defense,08DC4B8C,Russians,3,0,JUMPJET,0900000003000000000000000000000000000000000000000000000000000000,70.000000,30.000000,70.000000,0,0,0,0,<none>,0,0,1
@@ -403,6 +533,10 @@ Value=50
 01000014=3,3,0,7,0,0,0,0,A,13,0,7,0,0,0,0,A,74,0,7,0,0,0,0,A
 01000016=3,3,0,11,0,0,0,0,A,13,0,11,0,0,0,0,A,74,0,11,0,0,0,0,A
 01000018=3,3,0,12,0,0,0,0,A,13,0,12,0,0,0,0,A,74,0,12,0,0,0,0,A
+01000020=1,7,1,01000024,0,0,0,0,A
+01000025=3,7,1,01000031,0,0,0,0,A,53,2,01000027,0,0,0,0,A,54,2,01000020,0,0,0,0,A
+01000027=2,113,0,8,0,0,0,0,A,67,0,0,0,0,0,0,A
+01000035=2,7,1,01000034,0,0,0,0,A,21,6,EVA_ReinforcementsHaveArrived,0,0,0,0,A
 
 [Africans House]
 IQ=5
@@ -430,13 +564,16 @@ PlayerControl=no
 
 [Americans House]
 IQ=5
+000=GAPOWR,65,87
+001=GAPOWR,65,89
+002=GAPOWR,65,91
 Edge=North
 Color=DarkBlue
 Allies=Americans House
 Country=Americans
-Credits=0
-NodeCount=0
-TechLevel=10
+Credits=300
+NodeCount=3
+TechLevel=4
 PercentBuilt=100
 PlayerControl=no
 
@@ -542,6 +679,10 @@ PlayerControl=no
 01000014=1,13,0,10
 01000016=1,13,0,10
 01000018=1,13,0,10
+01000020=1,13,0,30
+01000025=1,57,0,186
+01000027=1,11,0,0
+01000035=1,13,0,60
 
 [French House]
 IQ=5
@@ -2209,14 +2350,19 @@ Edge=North
 Color=DarkRed
 Allies=Russians House
 Country=Russians
-Credits=0
+Credits=300
 NodeCount=0
-TechLevel=10
+TechLevel=4
 PercentBuilt=100
 PlayerControl=yes
 
 [SHIPYARD]
 TechLevel=-1
+
+[ScriptTypes]
+0=01000023
+1=01000030
+2=01000033
 
 [Smudge]
 0=BURNT04,123,124,0
@@ -2258,7 +2404,7 @@ DestroyableBridges=no
 6=Americans House,GAPOWR,256,65,91,0,None,1,0,1,0,0,None,None,None,0,0
 7=Americans House,GAREFN,256,58,93,0,0CA5605C,1,0,1,0,0,None,None,None,0,0
 8=Americans House,GAWEAP,256,58,89,0,0800AEAC,1,0,1,0,0,None,None,None,0,0
-9=Americans House,GAAIRC,256,58,86,0,09E2378C,1,0,1,0,0,None,None,None,0,0
+9=Americans House,AMRADR,256,59,86,64,None,1,0,1,0,0,None,None,None,0,0
 10=Americans House,CACOLO01,256,57,81,0,0A1A669C,0,0,1,0,0,None,None,None,0,0
 11=Americans House,GACNST,256,65,80,0,0BE853CC,1,0,1,0,0,None,None,None,0,0
 12=Americans House,GAPILL,256,72,78,64,None,1,0,1,0,0,None,None,None,0,0
@@ -2272,9 +2418,20 @@ DestroyableBridges=no
 20=Americans House,GAPILL,256,63,92,64,None,1,0,1,0,0,None,None,None,0,0
 21=Americans House,GAPILL,256,66,85,64,None,1,0,1,0,0,None,None,None,0,0
 22=Russians House,NACNST,256,118,44,64,None,1,0,1,0,0,None,None,None,0,0
-23=Americans House,CAGARD01,256,150,70,0,None,0,0,1,0,0,None,None,None,0,0
-24=Americans House,CAMISC03,256,147,66,0,None,0,0,1,0,0,None,None,None,0,0
-1028177=Neutral,CAARMY01,256,121,113,0,None,0,0,1,0,0,None,None,None,0,0
+25=Russians House,NALASR,256,112,61,64,None,1,0,1,0,0,None,None,None,0,0
+26=Russians House,NALASR,256,118,61,64,None,1,0,1,0,0,None,None,None,0,0
+27=Russians House,NALASR,256,107,61,64,None,1,0,1,0,0,None,None,None,0,0
+28=Russians House,NALASR,256,121,61,64,None,1,0,1,0,0,None,None,None,0,0
+29=Russians House,NAPOWR,256,112,39,64,None,1,0,1,0,0,None,None,None,0,0
+30=Russians House,NAPOWR,256,112,41,64,None,1,0,1,0,0,None,None,None,0,0
+31=Russians House,NAPOWR,256,116,41,64,None,1,0,1,0,0,None,None,None,0,0
+32=Russians House,NAHAND,256,119,52,64,None,1,0,1,0,0,None,None,None,0,0
+33=Russians House,NAWEAP,256,110,48,64,None,1,0,1,0,0,None,None,None,0,0
+34=Russians House,NAREFN,256,110,54,64,None,1,0,1,0,0,None,None,None,0,0
+35=Russians House,NAREFN,256,126,78,64,None,1,0,1,0,0,None,None,None,0,0
+36=Russians House,NALASR,256,123,76,64,None,1,0,1,0,0,None,None,None,0,0
+37=Americans House,CAMISC01,256,53,85,64,None,1,0,1,0,0,None,None,None,0,0
+38=Americans House,CAMISC01,256,53,86,64,None,1,0,1,0,0,None,None,None,0,0
 1028182=Americans,INGALITE,256,67,92,0,None,0,0,1,0,0,None,None,None,0,0
 1028183=Americans,INGALITE,256,60,88,0,None,0,0,1,0,0,None,None,None,0,0
 1028184=Neutral,CAHSE02,256,59,112,0,None,0,0,1,0,0,None,None,None,0,0
@@ -2303,7 +2460,7 @@ DestroyableBridges=no
 1028237=Neutral,INGALITE,256,117,50,0,None,0,0,1,0,0,None,None,None,0,0
 
 [Tags]
-01000001=0,AI Auto Production √¿ House,01000000
+01000001=0,AI Auto Production √¿ 1,01000000
 01000003=0,AI Auto Production Ìn House,01000002
 01000005=0,AI Auto Production ∑® House,01000004
 01000007=0,AI Auto Production µ¬ House,01000006
@@ -2313,8 +2470,20 @@ DestroyableBridges=no
 01000015=0,AI Auto Production π≈ House,01000014
 01000017=0,AI Auto Production ∆Ω House,01000016
 01000019=0,AI Auto Production ÷Œ∞≤®& House,01000018
+01000021=2,Rocketeer Support 1,01000020
+01000026=0,CACOLO01 Destroy 1,01000025
+01000028=0,Now player can win 1,01000027
+01000036=2,Flak Support 1,01000035
+
+[TaskForces]
+0=01000022
+1=01000029
+2=01000032
 
 [TeamTypes]
+0=01000024
+1=01000031
+2=01000034
 
 [Terrain]
 34126=TREE22
@@ -2542,6 +2711,7 @@ DestroyableBridges=no
 112117=TREE26
 112124=TREE26
 112125=TREE22
+112127=TREE20
 112130=TREE26
 112131=TREE27
 113057=TREE24
@@ -2568,7 +2738,6 @@ DestroyableBridges=no
 115111=TREE24
 115118=TREE20
 115125=TREE25
-115126=TREE20
 116066=TREE26
 116067=TREE27
 116079=TREE25
@@ -2728,11 +2897,13 @@ DestroyableBridges=no
 01000014=Confederation,<none>,AI Auto Production π≈,0,1,1,1,0
 01000016=Neutral,<none>,AI Auto Production ∆Ω,0,1,1,1,0
 01000018=Special,<none>,AI Auto Production ÷Œ∞≤®&,0,1,1,1,0
+01000020=Americans,<none>,Rocketeer Support,0,1,1,1,0
+01000025=Americans,<none>,CACOLO01 Destroy,0,1,1,1,0
+01000027=Russians,<none>,Now player can win,1,1,1,1,0
+01000035=Russians,<none>,Flak Support,0,1,1,1,0
 
 [Units]
-0=Americans House,PICK,256,148,66,128,Sleep,0B42318C,0,-1,0,-1,1,1
-1=Americans House,PICK,256,150,66,128,Sleep,0B42789C,0,-1,0,-1,1,1
-2=Americans House,PICK,256,152,66,128,Sleep,0B4273DC,0,-1,0,-1,1,1
+3=Russians House,HARV,256,129,79,64,Guard,None,0,-1,0,-1,1,0
 4=Neutral,CAR,256,82,122,0,Sleep,None,0,-1,0,-1,1,1
 5=Neutral,CAR,64,68,122,0,Sleep,None,0,-1,0,-1,1,1
 6=Neutral,CAR,2,68,132,0,Sleep,None,0,-1,0,-1,1,1
